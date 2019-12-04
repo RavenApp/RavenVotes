@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Find Your Poll{% endblock %}
+
+{% block desc %}Find your poll by asset name{% endblock %}
+
+{% block extra_head %}
+    <style>
+        #f {
+            width: 100%;
+            text-align: center;
+            font-size: 1.9rem;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1 class="header">Find Your Poll</h1>
+    <form method="GET" id="f">
+        Asset Name: <input name="asset" type="text">
+        <button type="submit">Find!</button>
+    </form>
+{% endblock %}

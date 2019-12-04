@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Browse Polls{% endblock %}
+
+{% block desc %}Browse all the newest polls at RavenVotes!{% endblock %}
+
+{% block extra_head %}
+    <style>
+        .vote-con {
+            width: 90%;
+            margin: 0 auto;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 1.2%;
+            transition: 0.5s;
+            color: rgb(0, 2, 110);
+        } .vote-con:hover {
+            padding: 3% 1.2%;
+            border: 1px solid rgb(0, 247, 255);
+            box-shadow: 10px 10px;
+            border-radius: 0;
+            transform: scale(1.03);
+        }
+
+        .yes-votes {
+            color: green;
+            float: left;
+        }
+
+        .no-votes {
+            color: red;
+            float: right;
+        }
+
+        .date {
+            color: black;
+            font-size: 0.9rem;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1 class="header">Browse Newest Polls</h1>
+    <h4 style="text-align:CENTER;">All times in UTC</h4>
+    {% for vote in votes %}
+        <a href="/poll/{{ vote.asset_name }}/" style="text-decoration: none;">
+            <div class="vote-con">
+                {{ vote.asset_name }}
+                <br>
+                <span class="yes-votes">&nbsp;YES Votes: {{ vote.loaded_data.address1_value }}</span>
+                <span class="no-votes">NO Votes: {{ vote.loaded_data.address2_value }}&nbsp;</span>
+                <br style="clear: both;">
+                <i class="date">Created: {{ vote.creation_time }}</i>
+            </div>
+            <br>
+        </a>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Decentralized Voting with Ravencoin{% endblock %}
+
+{% block desc %}RavenVotes is a service that allows you to cast and create votes and polls using Ravencoin (RVN) blockchain assets!{% endblock %}
+
+{% block extra_head %}
+    <style>
+        .bigboibtn {
+            margin: 0 auto;
+            padding: 1.5% 10%;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(0, 177, 0);
+            font-size: 1.8rem;
+            color: white;
+            transition: inherit;
+            text-decoration: none;
+            
+        } .bigboibtn:hover {
+            background-color: rgb(0, 85, 0);
+        }
+        .create-con {
+            width: 100%;
+            text-align: center!important;
+            transition: 0.5s;
+        } .create-con:hover {
+            transform: rotate(1.5deg);
+        }
+
+        #me {
+            width:100%;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1 class="header">Truly Decentralized Voting on Ravencoin</h1>
+    <dr>
+    <div class="create-con">
+        <a class="bigboibtn" href="/create/">START A POLL</a>
+    </div>
+    <br>
+    <br>
+    <div class="create-con">
+        <a class="bigboibtn" href="/browse/">BROWSE POLLS</a>
+    </div>
+    <br>
+{% endblock %}

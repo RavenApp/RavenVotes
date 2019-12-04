@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Create A Poll{% endblock %}
+
+{% block desc %}Create a poll and distribute your Ravencoin assets!{% endblock %}
+
+{% block extra_head %}
+    <style>
+        .warning {
+            text-align:center;
+            color: red;
+        }
+
+        .how-to {
+            text-align: center;
+        }
+
+        #YES {
+            color: green;
+        }
+
+        #NO {
+            color: red;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1 class="header">Create a Poll</h1>
+    <h1 style="text-align:center;">Step 1: Send any amount of any asset to RSendHereToGetListedRavenvotecTNQG <a href="/questions/#before-poll" class="link">Why?</a></h1>
+    <h3 class="warning">IMPORTANT! Do NOT send the ownership asset! It cannot be recovered!</h3>
+    <h3 class="how-to">You will see your listing show up within a minute on the <a href="/browse/" class="link">browse</a> feature, unless it gets filtered out for inappropriate content.</h3>
+    <h1 style="text-align:center;">Step 2: Distribute your tokens to your voters</h1>
+    <h1 style="text-align:center;">Step 3: Tell your voters how to vote:</h1>
+    <h3 class="how-to">If your voters wish to vote YES, tell them to send their tokens to <span id="YES">RSendHereToVoteYesRavenvotesXCzWWB</span>, 
+        and if your voters want to vote NO, tell them to send their assets to <span id="NO">RSendHereToVoteNoRavenvotesXWBKX4g</span>
+        you will be able to find your poll <a href="/find/" class="link">here</a>.</h3>
+{% endblock %}

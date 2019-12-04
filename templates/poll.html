@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block head_title %}{{ vote.asset_name }} Poll{% endblock %}
+
+{% block desc %}Browse all the newest polls at RavenVotes!{% endblock %}
+
+{% block extra_head %}
+    <style>
+        .yes-votes {
+            color: green;
+            float: left;
+            font-size: 2.4rem;
+        }
+
+        .no-votes {
+            color: red;
+            float: right;
+            font-size: 2.4rem;
+        }
+
+        #asset-data {
+            width: 100%;
+            text-align: center;
+        }
+
+        #YES {
+            color: green;
+            font-weight: lighter;
+        }
+
+        #NO {
+            color: red;
+            font-weight: lighter;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1 class="header">Poll: {{ vote.asset_name }}</h1>
+    <h3 style="text-align:CENTER;">Poll Created (UTC): {{ vote.creation_time }}</h3>
+    <span class="yes-votes">&nbsp;YES Votes: {{ vote.loaded_data.address1_value }}</span>
+    <span class="no-votes">NO Votes: {{ vote.loaded_data.address2_value }}&nbsp;</span>
+    <br style="clear: both;">
+    <br>
+    <h3 style="text-align: center;">
+        <span id="YES">Send {{ vote.asset_name }} to RSendHereToVoteYesRavenvotesXCzWWB to vote YES</span>
+        <br>
+        <span id="NO">Send {{ vote.asset_name }} to RSendHereToVoteNoRavenvotesXWBKX4g to vote NO</span>
+    </h3>
+    <div id="asset-data">
+        {{ vote.asset_name }} Supply: <b>{{ asset_data.amount }}</b> 
+        <br>
+        Units: <b>{{ asset_data.units }}</b>
+        <br>
+        Reissuable: <b>{{ asset_data.reissuable }}</b>
+        {% if asset_data.has_ipfs %}
+            <br>
+            IFPS Hash: <b>{{ asset_data.ipfs_hash }}</b>
+        {% endif %}
+    </div>
+{% endblock %}
