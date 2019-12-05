@@ -2,6 +2,6 @@
 
 Voting on the 2nd layer of Ravencoin
 
-It's Live: https://ravenvotes.com
+It's Live: http://ravenvotes.com
 
 Contibutions are welcome!
